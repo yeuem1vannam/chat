@@ -1,0 +1,9 @@
+<%= form_for(Message.new, remote: true) do |f| %>
+
+  <div class="form-inline well">
+    <%= f.label :content do %>
+    <%= f.text_field :content, class: "input-xlarge" %>
+    <%= f.submit "Send", {class: "btn btn-primary"} %>
+  <% end %>
+  </div>
+<% end %>

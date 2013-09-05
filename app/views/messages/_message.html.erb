@@ -1,0 +1,5 @@
+<tr>
+  <td><strong><%= message.user.name %></strong></td>
+  <td><%= message.content %></td>
+  <td><%= link_to 'X', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

@@ -1,0 +1,29 @@
+<h1>Listing messages</h1>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th class="span1">Content</th>
+      <th class="span8">Content</th>
+      <th class="span1">Destroy</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <%= render partial: "message", collection: @messages, as: :message %>
+  </tbody>
+</table>
+
+<br>
+
+<%= render "form" %>
+<script>
+$(function(){
+    setInterval(function(){
+      $.ajax({
+        type: "GET",
+        url: "<%= messages_path %>",
+        dataType: "script"
+        })
+      }, 5000);
+    })
+</script>
