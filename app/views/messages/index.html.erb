@@ -1,4 +1,7 @@
 <h1>Listing messages</h1>
+<div>
+  <%= button_tag "Set Notification", id: "notify_btn", class: "btn btn-primary" %>
+</div>
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -17,17 +20,29 @@
 
 <%= render "form" %>
 <script>
-$(function(){
+  $(function(){
+    if (window.webkitNotifications.checkPermission() == 0) { // 0 is PERMISSION_ALLOWED
+      $("#notify_btn").text("Notification Allowed");
+    } else {
+      $("#notify_btn").text("Set Notification");
+    };
     setInterval(function(){
       $.ajax({
         type: "GET",
         url: "<%= messages_path %>",
         dataType: "script"
-        })
-      }, 5000);
+      })
+    }, 5000);
 
     $("input:submit").click(function(){
       $(this).closest("input:text").val("");
-      });
-    })
+    });
+    document.querySelector('#notify_btn').addEventListener('click', function() {
+      if (window.webkitNotifications.checkPermission() == 0) { // 0 is PERMISSION_ALLOWED
+        $("#notify_btn").text("Notification Allowed");
+      } else {
+        window.webkitNotifications.requestPermission();
+      }
+    }, false);
+  })
 </script>
