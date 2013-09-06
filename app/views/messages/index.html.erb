@@ -25,5 +25,9 @@ $(function(){
         dataType: "script"
         })
       }, 5000);
+
+    $("input:submit").click(function(){
+      $(this).closest("input:text").val("");
+      });
     })
 </script>
