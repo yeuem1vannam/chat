@@ -47,10 +47,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+group :production, :staging do
+  gem "pg"
+end
 group :development, :test do
   gem 'sqlite3'
 end
 
-group :production, :staging do
-  gem "pg"
-end

@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  skip_before_filter :verify_authenticity_token, only: [:index, :create]
   before_action :require_login
   before_action :set_message, only: [:show, :edit, :update, :destroy]
   after_action :set_time
