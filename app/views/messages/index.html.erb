@@ -1,48 +1,18 @@
-<h1>Listing messages</h1>
-<div>
-  <%= button_tag "Set Notification", id: "notify_btn", class: "btn btn-primary" %>
+<div class="clearfix" style="padding-bottom: 50px"></div>
+<div class="row">
+  <div class="span4">
+    <h1>Messages</h1>
+    <div>
+      <%= button_tag "Set Notification", id: "notify_btn", class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="span8" id="messages">
+    <div class="row" id="messages-inner">
+      <%= render partial: "message", collection: @messages, as: :message %>
+    </div>
+    <%= render "form" %>
+  </div>
 </div>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th class="span1">Content</th>
-      <th class="span8">Content</th>
-      <th class="span1">Destroy</th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <%= render partial: "message", collection: @messages, as: :message %>
-  </tbody>
-</table>
-
-<br>
-
-<%= render "form" %>
-<script>
-  $(function(){
-    if (window.webkitNotifications.checkPermission() == 0) { // 0 is PERMISSION_ALLOWED
-      $("#notify_btn").text("Notification Allowed");
-    } else {
-      $("#notify_btn").text("Set Notification");
-    };
-    setInterval(function(){
-      $.ajax({
-        type: "GET",
-        url: "<%= messages_path %>",
-        dataType: "script"
-      })
-    }, 5000);
-
-    $("input:submit").click(function(){
-      $(this).closest("input:text").val("");
-    });
-    document.querySelector('#notify_btn').addEventListener('click', function() {
-      if (window.webkitNotifications.checkPermission() == 0) { // 0 is PERMISSION_ALLOWED
-        $("#notify_btn").text("Notification Allowed");
-      } else {
-        window.webkitNotifications.requestPermission();
-      }
-    }, false);
-  })
-</script>
+<% content_for :js do %>
+  <%= javascript_include_tag :messages, "data-turbolinks-track" => true %>
+<% end %>

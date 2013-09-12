@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chat</title>
+  <title>J & Jn</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div style="float: right">
-  <%= link_to("Logout", session_path(current_user), method: :delete, class: "btn btn-primary") if signed_in? %>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "J & Jn", "#", class: :brand %>
+      <%= link_to("Logout", session_path(current_user), method: :delete, class: "btn btn-primary", style: "float: right") if signed_in? %>
+    </div>
+  </div>
+</div>
+<div class="container" id="main">
+  <%= yield %>
 </div>
 
-<%= yield %>
-
+<%= yield(:js) if content_for? :js %>
 </body>
 </html>

@@ -1,9 +1,8 @@
 <%= form_for(Message.new, remote: true) do |f| %>
-
-  <div class="form-inline well">
+  <div class="form-inline well me">
     <%= f.label :content do %>
-    <%= f.text_field :content, class: "input-xxlarge" %>
-    <%= f.submit "Send", {class: "btn btn-primary"} %>
-  <% end %>
+      <%= f.text_field :content, class: "input-xxlarge", placeholder: "Love" %>
+      <%= f.submit "Send", {class: "btn btn-primary", autocomplete: "off"} %>
+    <% end %>
   </div>
 <% end %>

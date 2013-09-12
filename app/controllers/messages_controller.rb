@@ -2,14 +2,14 @@ class MessagesController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: [:index, :create]
   before_action :require_login
   before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :last_messages, only: :index
   after_action :set_time
 
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    @messages = Message.where("").load
     respond_to do |format|
-      @lastest = last_messages
       format.html
       format.json
       format.js
@@ -83,7 +83,7 @@ class MessagesController < ApplicationController
     end
 
     def last_messages
-      Message.where("created_at >= ?", session[:last_time]).all
+      @lastest = Message.where("created_at >= ?", session[:last_time]).load
     end
 
     def set_time

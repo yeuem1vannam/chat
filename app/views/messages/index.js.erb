@@ -1,7 +1,6 @@
 <% if @lastest.present? %>
-$("tbody").append("<%=j render partial: 'message', collection: @lastest, as: :message %>");
+$("#messages-inner").append("<%=j render partial: 'message', collection: @lastest, as: :message %>");
 if (window.webkitNotifications.checkPermission() == 0) { // 0 is PERMISSION_ALLOWED
-  // function defined in step 2
   notification = window.webkitNotifications.createNotification('/assets/<%= @lastest.first.user.name.downcase %>.jpg',
       "<%= j @lastest.map{|l| l.user.name}.uniq.join(",") %>", "<%= j @lastest.map(&:content).join(',') %>");
   notification.ondisplay = function(event) {

@@ -1,5 +1,9 @@
-<tr class="<%= current_user == message.user ? 'me' : 'my-love'%>">
-  <td><strong><%= message.user.name %></strong></td>
-  <td><%= message.content %></td>
-  <td><%= link_to message.created_at.in_time_zone(7).strftime("%H:%M:%S"), message, method: :delete, data: { confirm: "Delete this message?" } %></td>
-</tr>
+<div class="message-wrapper <%= current_user == message.user ? '' : 'from-my-lover' %>">
+  <div class="screen-name"><strong><%= message.user.name %></strong></div>
+  <div class="message">
+    <%= message.content %>
+  </div>
+  <div class="delete">
+    <%= link_to_if message.user == current_user, message.created_at.in_time_zone(7).strftime("%H:%M:%S"), message, method: :delete, data: { confirm: "Delete this message?" } %>
+  </div>
+</div>
