@@ -1,5 +1,5 @@
-<tr>
+<tr class="<%= current_user == message.user ? 'me' : 'my-love'%>">
   <td><strong><%= message.user.name %></strong></td>
   <td><%= message.content %></td>
-  <td><%= link_to 'X', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td><%= link_to message.created_at.in_time_zone(7).strftime("%H:%M:%S"), message, method: :delete, data: { confirm: "Delete this message?" } %></td>
 </tr>

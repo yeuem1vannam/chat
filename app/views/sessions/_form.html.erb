@@ -2,13 +2,13 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, autocomplete: "off" %>
   </div>
   <div class="field">
     <%= f.label :password %><br>
     <%= f.password_field :password %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Login", class: "btn btn-primary" %>
   </div>
 <% end %>

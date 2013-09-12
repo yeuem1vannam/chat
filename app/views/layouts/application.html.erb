@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div style="float: right">
+  <%= link_to("Logout", session_path(current_user), method: :delete, class: "btn btn-primary") if signed_in? %>
+</div>
 
 <%= yield %>
 
