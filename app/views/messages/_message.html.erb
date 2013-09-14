@@ -1,4 +1,4 @@
-<div class="message-wrapper <%= current_user == message.user ? '' : 'from-my-lover' %>">
+<div class="message-wrapper <%= current_user == message.user ? 'from-me' : 'from-my-lover' %>">
   <div class="screen-name"><strong><%= message.user.name %></strong></div>
   <div class="message">
     <%= message.content %>

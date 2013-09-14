@@ -24,38 +24,6 @@
 div.message-wrapper {
   margin-bottom: 5px;
 }
-.from-my-lover div.screen-name {
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
-  color: white;
-  background-color: #5BB75B;
-  background-image: -moz-linear-gradient(top, #62c462, #51a351);
-  background-image: -ms-linear-gradient(top, #62c462, #51a351);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
-  background-image: -webkit-linear-gradient(top, #62c462, #51a351);
-  background-image: -o-linear-gradient(top, #62c462, #51a351);
-  background-image: linear-gradient(top, #62c462, #51a351);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#62c462', endColorstr='#51a351', GradientType=0);
-  border-color: #51A351 #51A351 #387038;
-  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-}
-.from-my-lover div.screen-name {
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
-  color: white;
-  background-color: #5BB75B;
-  background-image: -moz-linear-gradient(top, #62c462, #51a351);
-  background-image: -ms-linear-gradient(top, #62c462, #51a351);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
-  background-image: -webkit-linear-gradient(top, #62c462, #51a351);
-  background-image: -o-linear-gradient(top, #62c462, #51a351);
-  background-image: linear-gradient(top, #62c462, #51a351);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#62c462', endColorstr='#51a351', GradientType=0);
-  border-color: #51A351 #51A351 #387038;
-  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-}
 div.screen-name {
   padding: 4px 10px 4px;
   margin-bottom: 0;
@@ -81,8 +49,6 @@ div.screen-name {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
   -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
   -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
@@ -103,15 +69,57 @@ div.message {
   padding: 5px;
   height: 100%;
   border: 1px solid #ccc;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  margin-left: -5px;
   max-width: 400px;
   min-height: 18px;
   vertical-align: middle;
   background: #fff;
 }
-div.delete{
+.from-my-lover div.delete{
   display: inline-block;
   float: right;
+}
+
+.from-me {
+  direction: rtl; 
+  unicode-bidi: bidi-override;
+}
+
+.from-me div.delete {
+  display: inline-block;
+  float: left;
+}
+
+.from-me div.screen-name {
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.from-my-lover div.screen-name {
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  color: white;
+  background-color: #5BB75B;
+  background-image: -moz-linear-gradient(top, #62c462, #51a351);
+  background-image: -ms-linear-gradient(top, #62c462, #51a351);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
+  background-image: -webkit-linear-gradient(top, #62c462, #51a351);
+  background-image: -o-linear-gradient(top, #62c462, #51a351);
+  background-image: linear-gradient(top, #62c462, #51a351);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#62c462', endColorstr='#51a351', GradientType=0);
+  border-color: #51A351 #51A351 #387038;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.from-me div.message {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-right: -5px;
+}
+.from-my-lover div.message {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-left: -5px;
 }
