@@ -80,7 +80,7 @@ div.message {
 }
 
 .from-me {
-  direction: rtl; 
+  direction: rtl;
   unicode-bidi: bidi-override;
 }
 

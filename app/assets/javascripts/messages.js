@@ -22,7 +22,15 @@ $(function(){
       url: "/messages",
       data: "",
       dataType: "script"
-    })
+    }).done(function(data){
+      if(data){
+        $.titleAlert("News", {
+          requireBlur:true,
+          stopOnFocus:true,
+          interval:600
+        });
+      }
+    });
   }, 5000);
 
   document.querySelector('#notify_btn').addEventListener('click', function() {
