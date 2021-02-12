@@ -2,12 +2,12 @@ source 'https://rubygems.org'
 
 ruby "2.0.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '6.0.3.5'
 gem "thin"
 
 # Use sqlite3 as the database for Active Record
 gem "less-rails"
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '>= 2.2.8'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
